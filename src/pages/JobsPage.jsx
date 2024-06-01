@@ -1,11 +1,12 @@
+import JobLists from "../components/JobLists"
 
 
 
 const JobsPage = () => {
     return (
-        <>
-        Job Lists Page
-        </>
+        <section>
+          <JobLists/>
+        </section>
     )
 }
 

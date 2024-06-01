@@ -1,9 +1,15 @@
-
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import logo from '../assets/images/logo.png'
 
 
+
 const Navbar = () =>{
+
+    function ActiveNavbar({isActive}) {
+        return isActive ? "text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2" :
+                     "text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+    }
+
     return (
         <nav className="bg-indigo-700 border-b border-indigo-500" key="Navbar">
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -20,21 +26,21 @@ const Navbar = () =>{
                 </a>
                 <div className="md:ml-auto">
                 <div className="flex space-x-2">
-                    <Link 
+                    <NavLink 
                     to="/"
-                    className="text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2">
+                    className={ActiveNavbar}>
                     Home
-                    </Link>
-                    <Link
+                    </NavLink>
+                    <NavLink
                     to="/jobs"
-                    className="text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2">
+                    className={ActiveNavbar}>
                     Jobs
-                    </Link>
-                    <Link
+                    </NavLink>
+                    <NavLink
                     to="/add-job"
-                    className="text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2">
+                    className={ActiveNavbar}>
                         Add Job
-                    </Link>
+                    </NavLink>
                 </div>
                 </div>
             </div>
@@ -45,3 +51,13 @@ const Navbar = () =>{
 }
 
 export default Navbar
+
+
+
+/*
+1. Why my console.log() printing two times?
+You are using a React functional component:
+    In React functional components, the component function is invoked twice during the React lifecycle: 
+once during the initial render and once during the re-render triggered by the React reconciliation process.
+If you have console.log() statements inside your functional component, they will be executed twice.
+*/
