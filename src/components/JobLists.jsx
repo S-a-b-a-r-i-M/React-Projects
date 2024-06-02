@@ -11,7 +11,7 @@ const JobLists = ({ isHome=false }) =>{
             const fetchJobs = async () =>{
                 try{
                      let query = isHome ? "?_limit=3" : ""
-                     let response = await fetch("http://localhost:5000/jobs"+query)
+                     let response = await fetch(`http://localhost:5000/jobs${query}`)
                      let result = await response.json()
                      setJobs(result)
                 }
