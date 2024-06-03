@@ -1,32 +1,28 @@
+import { useLoaderData, useNavigate } from "react-router-dom"
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 
-/*
-Difference between normal CSS and JSX 
-1. for -> htmlFor
-2. class -> className
-*/
-
-const AddJob = ({ addJobSubmit }) => {
-    const [type, setType] = useState('Full-Time')
-    const [title, setTitle] = useState('')
-    const [description, setDescription] = useState('')
-    const [salary, setSalary] = useState('Under $50K')
-    const [location, setLocation] = useState('')
-    const [companyName, setCompanyName] = useState('')
-    const [companyDes, setCompanyDes] = useState('')
-    const [contactEmail, setContactEmail] = useState('')
-    const [contactPhone, setContactPhone] = useState('')
-
-    const navigator = useNavigate()// used to navigate from one page to another page
+const EditJobPage = ({ updateJob }) => {
+    const job = useLoaderData()
+    const [type, setType] = useState(job.type)
+    const [title, setTitle] = useState(job.title)
+    const [description, setDescription] = useState(job.description)
+    const [salary, setSalary] = useState(job.salary)
+    const [location, setLocation] = useState(job.location)
+    const [companyName, setCompanyName] = useState(job.company.name)
+    const [companyDes, setCompanyDes] = useState(job.company.description)
+    const [contactEmail, setContactEmail] = useState(job.company.contactEmail)
+    const [contactPhone, setContactPhone] = useState(job.company.contactPhone)
+    
+    const navigate = useNavigate()
 
     function submitForm(e){
         e.preventDefault()
         // e.preventDefault(): This line is typically used when handling form submissions in JavaScript. The e parameter represents the event object, which is automatically passed to the event handler function (in this case, submitForm).
         // preventDefault() is a method on the event object that prevents the default behavior of the event from occurring. In the case of a form submission, it prevents the default action of the browser, which is to submit the form and reload the page.
 
-        const newJob = {
+        const updatedJob = {
+            id: job.id,
             type,
             title,
             description,
@@ -39,12 +35,11 @@ const AddJob = ({ addJobSubmit }) => {
                 contactPhone
             }
         }
+        console.log(updatedJob);
 
-        console.log(newJob, addJobSubmit);
-        newJob && addJobSubmit(newJob)
-
-        toast.success(`${newJob.title} job added successfully`)
-        navigator("/jobs")
+        job !== updatedJob && updateJob(updatedJob)
+        toast.success("Changes saved")
+        navigate(`/jobs/`)
     }
 
     return (
@@ -224,15 +219,15 @@ const AddJob = ({ addJobSubmit }) => {
                         className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
                         type="submit"
                     >
-                        Add Job
+                        Save Changes
                     </button>
                     </div>
                 </form>
                 </div>
             </div>
-            </section>
+        </section>
         </>
     )
 }
 
-export default AddJob
+export default EditJobPage

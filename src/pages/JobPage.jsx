@@ -3,7 +3,7 @@ import JobList from "../components/JobList"
 
 // USING USE PARAMS
 // const JobPage = () => {
-//     const { id } = useParams() // while using useParams 
+//     const { id } = useParams // while using useParams 
 //     const [job, setJob] = useState(null)
 
 //     useEffect(() => {
@@ -26,13 +26,22 @@ import JobList from "../components/JobList"
 // }
 
 //USING DATA LOADER HOOK  
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData, useNavigate, useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { FaArrowLeft, FaMapMarker } from "react-icons/fa"
+import { toast } from "react-toastify"
 
-const JobPage = () => {
+const JobPage = ({ deleteJob }) => {
+    const navigate = useNavigate()
     const job = useLoaderData()
     console.log(job);
+
+    const onClickDeleteJob = () => {
+        deleteJob(job.id)
+
+        toast.success(`${job.title} deleted successfully`)
+        navigate("/jobs")
+    }
 
     return (
         <>
@@ -116,6 +125,7 @@ const JobPage = () => {
                 </Link>
                 <button
                     className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
+                    onClick={() => onClickDeleteJob()}
                 >
                     Delete Job
                 </button>

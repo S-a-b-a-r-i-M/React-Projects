@@ -6,22 +6,70 @@ import JobsPage from './pages/JobsPage'
 import NotFoundPage from './pages/NotFoundPage'
 import JobPage,{JobLoader} from './pages/JobPage'
 import AddJob from './pages/AddJob'
+import EditJobPage from './pages/EditJobPage'
 
 
-const router = createBrowserRouter(
+
+const App = () => {
+
+  // add a job 
+  async function addJob(newJob)  {
+    let res = await fetch(
+          "http://localhost:5000/jobs",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newJob)
+          }
+      ) 
+    let result = await res.json()
+  }
+
+  //delete a job
+  async function deleteJob(jobId){
+    let res = await fetch(
+      `http://localhost:5000/jobs/${jobId}`,
+      {
+        method: "DELETE",
+      }
+    )
+    let result = await res.json()
+    console.log("delete job", jobId, !(result));
+  }
+
+
+  //update a job
+  async function updateJob(job){
+    let res = await fetch(
+      `http://localhost:5000/jobs/${job.id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(job)
+      }
+    )
+    console.log("update job", job.id, res);
+  }
+
+
+  const router = createBrowserRouter(
       createRoutesFromElements(
       <Route element={<MainLayout/>}>
         <Route index element={<HomePage/>}/>
         <Route path="/jobs" element={<JobsPage/>}/>
-        <Route path="/jobs/:id" element={<JobPage/>} loader={JobLoader}/>
-        <Route path="/add-job" element={<AddJob/>}/>
+        <Route path="/jobs/:id" element={<JobPage deleteJob={deleteJob}/>} loader={JobLoader}/> {/*dynamic param api*/}
+        <Route path="/job/edit/:id" element={<EditJobPage updateJob={updateJob}/>} loader={JobLoader}/>
+        <Route path="/add-job" element={<AddJob addJobSubmit={addJob}/>} />
         <Route path="*" element={<NotFoundPage/>}/>  
       </Route>
       
     )
-)
+  )
 
-const App = () => {
   return <RouterProvider router={router}/>
 }
 
