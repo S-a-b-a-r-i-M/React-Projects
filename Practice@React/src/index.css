@@ -1,0 +1,70 @@
+
+/* SYNTAX
+.class {
+    1.sizes
+    2.alignments , display content
+    3.color, decoration 
+    4.border, box, shadow
+    4.padding, margin
+}
+*/
+
+.card {
+    border: 1px solid rgba(165, 42, 42, 0.205);
+    padding: 5px;
+    margin: 10px;
+    max-width: 300px;
+    box-shadow: 2px 2px 15px;
+    display: inline-block;
+}
+
+.card > .card-img {
+    width: 75%;
+    height: 60%;
+}
+
+.card > .card-tit{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: hsla(0, 2%, 34%, 0.992);
+
+}
+
+.card > .description{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: hsla(0, 3%, 30%, 0.507);
+}
+
+.button{
+    background-color: yellowgreen;
+    color: whitesmoke;
+    font-size: medium;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.employee-card {
+    max-width: 400px;
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.greet{
+    max-width: 60%;
+    text-align: center;
+    background-color: aquamarine;
+    border: 0.5px solid rgb(58, 211, 162);
+    border-radius: 5px;
+    padding: 5px 0px;
+}
+
+.login-prompt{
+    max-width: 60%;
+    text-align: center;
+    background-color: rgba(173, 18, 18, 0.753);
+    border: 0.5px solid rgb(168, 54, 9);
+    border-radius: 5px;
+    padding: 5px 0px;
+}

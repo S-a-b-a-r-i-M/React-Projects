@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* i can reuse this into multiple buttons */
+.btn {
+ @apply  bg-purple-400 hover:bg-purple-600 text-white text-xl rounded-md px-6 py-3
+}

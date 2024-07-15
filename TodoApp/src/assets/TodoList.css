@@ -1,0 +1,82 @@
+.to-do-app{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+h2{
+    font-size: 2.2rem;
+    color: orange;
+}
+
+button{
+    font-size: 1.4rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: background-color .5s ease;
+}
+
+.add-btn{
+    background-color: green;
+}
+
+input[type="text"]{
+    font-size: 1.4rem;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.arrow-icon{
+    color: orange;
+}
+
+.move-btn{
+    font-size: 1.2rem;
+    margin-left: 5px;
+    background-color: rgba(128, 128, 128, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.move-btn:hover{
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+.delete-icon{
+    color: rgb(180, 48, 48);
+}
+
+.delete-btn{
+    font-size: 1.2rem;
+    margin-left: 10px;
+    border: none;
+}
+
+.delete-btn:hover{
+    background-color: rgba(194, 44, 44, 0.3);
+}
+
+ul{
+    padding: 0px;
+}
+
+li{
+    text-transform: capitalize;
+    display: flex;
+    flex: 3;
+    align-items: center;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+p{
+    flex: 1;
+    /* flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%; */
+}
