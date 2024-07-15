@@ -6,9 +6,7 @@ const ViewAllJobs = () =>{
     <section className="m-auto max-w-lg my-10 px-6">
       <Link
         to="/jobs"
-        className="block bg-block text-white
-                  text-center px4 px6 rounded-xl
-                  hover: bg-gray-700"
+        className="block bg-block text-white text-center px4 px6 rounded-xl hover: bg-gray-700"
 
       >
         View all jobs

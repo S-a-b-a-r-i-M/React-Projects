@@ -8,11 +8,11 @@ const Poster = ({title="Default Title", subtitle="Default Subtitle"}) => {
             >
             <div className="text-center">
                 <h1
-                className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl"
+                className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white"
                 >
                 {title}
                 </h1>
-                <p className="my-4 text-xl text-white">
+                <p className="text-xl text-white my-4">
                 {subtitle}
                 </p>
             </div>

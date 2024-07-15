@@ -3,7 +3,7 @@ import JobList from "../components/JobList"
 
 // USING USE PARAMS
 // const JobPage = () => {
-//     const { id } = useParams // while using useParams 
+//     const { id } = useParams() // while using useParams 
 //     const [job, setJob] = useState(null)
 
 //     useEffect(() => {
@@ -45,7 +45,6 @@ const JobPage = ({ deleteJob }) => {
 
     return (
         <>
-        <section>
         <div className="container m-auto py-6 px-6">
             <Link
             to="/jobs/"
@@ -54,7 +53,6 @@ const JobPage = ({ deleteJob }) => {
             <FaArrowLeft className="mr-1"/> Back to Job Listings
             </Link>
         </div>
-        </section>
 
         <section className="bg-indigo-50">
         <div className="container m-auto py-10 px-6">
