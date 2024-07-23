@@ -1,12 +1,12 @@
-import UseRef from "./components/UseRef"
+import HookFormWidZod from "./components/HookFormWidZod"
 
 
 function App() {
 
   return (
-    <> 
-      <UseRef />
-    </>
+    <div> 
+      <HookFormWidZod />
+    </div>
   )
 }
 
