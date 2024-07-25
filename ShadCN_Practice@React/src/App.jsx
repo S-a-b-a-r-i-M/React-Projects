@@ -1,11 +1,12 @@
 import { Button } from "./components/ui/button"
+import Payment from "./pages/payments/payment"
 
 
 function App() {
 
   return (
-    <div className="h-screen w-screen flex justify-center items-center">
-     <Button variant="icon" size="lg">1</Button>
+    <div className="h-full w-full m-20">
+      <Payment />
     </div>
   )
 }
