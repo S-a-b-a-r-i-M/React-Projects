@@ -2,7 +2,7 @@ import { features } from "../constants/constants"
 
 function FeaturesSection() {
   return (
-    <div className="relative min-h-[800px] my-20">
+    <div className="my-20">
       <div className="text-center">
         <span className="text-sm text-orange-500 font-semibold bg-neutral-800 rounded-lg
                          uppercase py-1 px-2">
@@ -18,7 +18,7 @@ function FeaturesSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">
           {features.map((feature) => (
-            <div className="flex gap-4 mt-10">
+            <div key={feature.text} className="flex gap-4 mt-10">
               <span className="w-8 h-8 text-orange-500 bg-neutral-800 rounded-lg p-1">
                 {feature.icon}
               </span>

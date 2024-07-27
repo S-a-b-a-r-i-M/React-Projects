@@ -1,7 +1,7 @@
 //  (server component) is where we'll fetch data and render our table.
 
 import React from 'react'
-import DataTable from './dataTable'
+import DataTable from './DataTable'
 import { columns, data } from './columns'
 
 function Payment() {

@@ -21,7 +21,7 @@ function NavBar() {
   const toggleMenu = () => setMobileMenuDrawer(!mobileMenuDrawer)
 
   return (
-    <nav className={`sticky top-0 backdrop-blur-lg border-b border-neutral-600 
+    <nav className={`w-screen min-h-16 fixed top-0 right-0 left-0  z-50 backdrop-blur-lg border-b border-neutral-600 
                     ${mobileMenuDrawer ? 'pt-4' : 'py-4'}`}>
         <div className="flex justify-between items-center mx-10 lg:mx-20">
           {/* Logo */}
