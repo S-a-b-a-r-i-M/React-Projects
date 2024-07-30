@@ -56,7 +56,7 @@ function DataTable({ columns, data }) {
   })
  
   return (
-    <div>
+    <div className="w-full">
       <div className="flex items-center gap-10 py-4">
         {/* Filter */}
         <Input
@@ -131,14 +131,14 @@ function DataTable({ columns, data }) {
                       key={row.id}
                       data-state={row.getIsSelected() && "selected"}
                     >
-                        {row.getVisibleCells().map((cell) => {
-                          console.log(cell)
-                          return(
-                            <TableCell key={cell.id}>
-                              { flexRender(cell.column.columnDef.cell, cell.getContext()) }
-                            </TableCell>
-                          )
-                        })}
+                      {row.getVisibleCells().map((cell) => {
+                        console.log(cell)
+                        return(
+                          <TableCell key={cell.id}>
+                            { flexRender(cell.column.columnDef.cell, cell.getContext()) }
+                          </TableCell>
+                        )
+                      })}
                     </TableRow>
                   )
                 })

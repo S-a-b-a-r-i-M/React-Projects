@@ -7,7 +7,7 @@ import { ArrowUpDown, MoreHorizontal } from "lucide-react"
 
 export const data = [
   {
-    id: "728ed52f",    amount: 100,    status: "pending",    email: "a@exampleeeeeeeeeeeeeeeeeeeeeeeeee.com",
+    id: "728ed52f",    amount: 100,    status: "pending",    email: "a@exampleeeeeeeeee.com",
   },
   {
     id: "489e1d42",    amount: 125,    status: "processing",    email: "zxample@gmail.com",

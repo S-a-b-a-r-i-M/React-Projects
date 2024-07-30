@@ -5,7 +5,7 @@ import Payment from "./pages/payments-data-table/Payment"
 function App() {
 
   return (
-    <div className="h-full w-full m-20">
+    <div className="h-screen w-screen m-20">
       <Payment />
     </div>
   )

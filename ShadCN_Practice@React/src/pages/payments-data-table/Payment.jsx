@@ -7,7 +7,7 @@ import { columns, data } from './columns'
 function Payment() {
 
   return (
-    <div className='flex justify-center items-center '>
+    <div className='w-full flex'>
       <DataTable columns={columns} data={data}/>
     </div>
   )

@@ -19,8 +19,8 @@ function Workflow() {
         <div className="w-full lg:w-1/2">
           {checklistItems.map((item, idx) => (
             <div key={idx} className="flex gap-x-5 my-10">
-              <div className="w-5 h-6 bg-neutral-800 rounded-lg p-1">
-                <CheckCircle className="w-5 h-5 text-green-400" />
+              <div className="w-8 h-8 flex justify-center items-center bg-neutral-800 rounded-lg">
+                <CheckCircle className="w-6 h-6 text-green-400" />
               </div>
               <div>
                 <h5 className="text-xl">{item.title}</h5>
