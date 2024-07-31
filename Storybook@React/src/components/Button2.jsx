@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 const Button2 = ({ children, className, OnClick }) => (
   <button 
-    className={`font-bold rounded py-2 px-4 ${className}`}
+    className={`min-w-32 font-bold rounded py-2 px-4 ${className}`}
     onClick={OnClick}
   >      
   {children}

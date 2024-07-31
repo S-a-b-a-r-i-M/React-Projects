@@ -19,7 +19,7 @@ function Button({ name, variant="primary", fontSize="15", isRounded=true, onClic
   )
 }
 
-Button.protoTypes = {
+Button.propTypes = {
   name: PropTypes.string,
   variant: PropTypes.oneOf(["primary", "secondary"]),
   fontSize: PropTypes.string,

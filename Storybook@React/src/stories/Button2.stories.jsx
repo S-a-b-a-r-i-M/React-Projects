@@ -1,6 +1,5 @@
 import Button2 from "../components/Button2";
 
-
 export default {
   title: "Component/Button2",
   component: Button2,
