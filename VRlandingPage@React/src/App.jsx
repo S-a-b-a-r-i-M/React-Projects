@@ -1,4 +1,5 @@
 import FeaturesSection from "./components/FeaturesSection"
+import Footer from "./components/Footer"
 import HeroSection from "./components/HeroSection"
 import NavBar from "./components/NavBar"
 import Pricing from "./components/Pricing"
@@ -15,6 +16,7 @@ function App() {
         <Workflow />
         <Pricing />
         <Testimonials />
+        <Footer />
       </div>
     </>
   )

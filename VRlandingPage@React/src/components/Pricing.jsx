@@ -32,7 +32,7 @@ function Pricing() {
       <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-center tracking-wide">
         Pricing
       </h2>
-      <div className="max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 my-10 mx-auto">
+      <div className="max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-10 mx-auto">
         {pricingOptions.map((option) => <PricingCard key={option.title} option={option}/> )}
       </div>
     </div>
