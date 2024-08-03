@@ -1,6 +1,5 @@
-import { useState } from "react";
 import Card from "../components/Card";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 
 export default {

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 
 function Card({ imgUrl, title, subTitle, content, actionLabel, onAction, variant="default" }) {
-  const baseClass = "w-1/2 rounded overflow-hidden shadow-lg"
+  const baseClass = "max-w-sm rounded overflow-hidden shadow-lg"
   const variantClasses = {
     default: "bg-white",
     primary: "bg-blue-100",

@@ -1,12 +1,11 @@
-import { Button } from "./components/ui/button"
-import Payment from "./pages/payments-data-table/Payment"
+import MultiSelect from "./custom-components/MultiSelect";
 
 
 function App() {
 
   return (
-    <div className="h-screen w-screen m-20">
-      <Payment />
+    <div className="flex justify-center items-center m-20">
+      <MultiSelect />
     </div>
   )
 }
