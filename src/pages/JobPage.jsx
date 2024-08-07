@@ -1,32 +1,34 @@
 import { useState, useEffect } from "react"
 import JobList from "../components/JobList"
+import { useParams } from "react-router-dom"
 
 // USING USE PARAMS
-// const JobPage = () => {
-//     const { id } = useParams() // while using useParams 
-//     const [job, setJob] = useState(null)
+/*
+const JobPage = () => {
+    const { id } = useParams() // while using useParams 
+    const [job, setJob] = useState(null)
 
-//     useEffect(() => {
-//         const fetchJob = async () => {
-//             try{
-//                 let res = await fetch(`http://localhost:5000/jobs/${id}`)
-//                 let data = await res.json()
-//                 console.log(data, job);
-//                 setJob(data)
-//             }
-//             catch(err){
-//                 console.error("Error on fetching job based on id",err);
-//             }
-//         }
+    useEffect(() => {
+        const fetchJob = async () => {
+            try{
+                let res = await fetch(`http://localhost:5000/jobs/${id}`)
+                let data = await res.json()
+                console.log(data, job);
+                setJob(data)
+            }
+            catch(err){
+                console.error("Error on fetching job based on id",err);
+            }
+        }
 
-//         fetchJob()
-//     }, [id])
+        fetchJob()
+    }, [id])
 
-//     return <>{job && <JobList job={job}/>}</>
-// }
+    return <>{job && <JobList job={job}/>}</>
+} */
 
 //USING DATA LOADER HOOK  
-import { useLoaderData, useNavigate, useParams } from "react-router-dom"
+import { useLoaderData, useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { FaArrowLeft, FaMapMarker } from "react-icons/fa"
 import { toast } from "react-toastify"

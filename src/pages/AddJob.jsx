@@ -8,7 +8,7 @@ Difference between normal CSS and JSX
 2. class -> className
 */
 
-const AddJob = ({ addJobSubmit }) => {
+export const AddJob = ({ addJobSubmit }) => {
     const [type, setType] = useState('Full-Time')
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
@@ -234,5 +234,3 @@ const AddJob = ({ addJobSubmit }) => {
         </>
     )
 }
-
-export default AddJob
