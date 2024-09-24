@@ -1,10 +1,11 @@
-import Example from "./components/PhoneInput"
-
+import HookFormWidZod from "./components/HookFormWidZod"
+import { DateTimeMoment } from "./components/DateTimeMoment"
 
 function App() {
-
+  DateTimeMoment()
   return (
-      <Example />
+      <HookFormWidZod />
+      
   )
 }
 
