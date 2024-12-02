@@ -1,11 +1,10 @@
 import './App.css'
+import MyBlockNoteView from './pages/my-block-note-view'
 
 function App() {
 
   return (
-      <p className="text-lg">
-        Click on the Vite and React logos to learn more
-      </p>
+     <MyBlockNoteView />
   )
 }
 
