@@ -30,7 +30,7 @@ const SignUpForm = () => {
           </div>
 
           {/* Name Field */}
-          <div className="space-y-2">
+          <div className="space-y-5">
             <Label htmlFor="name">Name*</Label>
             <Input id="name" placeholder="Name" />
           </div>
