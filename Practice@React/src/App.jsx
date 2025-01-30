@@ -1,10 +1,10 @@
-import HookFormWidZod from "./components/HookFormWidZod"
 import { DateTimeMoment } from "./components/DateTimeMoment"
+import FormDataWithFile from "./components/FormDataWithFile"
 
 function App() {
   DateTimeMoment()
   return (
-      <HookFormWidZod />
+      <FormDataWithFile />
       
   )
 }
