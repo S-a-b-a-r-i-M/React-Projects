@@ -1,14 +1,12 @@
 import './App.css'
-import PubSubEvent from './pages/pub-sub-event'
-import ReactAsyncSelect from './pages/react-select/async-select'
+import SignUpForm from './pages/login/SignUpForm'
 // import MyBlockNoteView from './pages/my-block-note-view'
 
 function App() {
 
   return (
-    //  <MyBlockNoteView />
-    // <PubSubEvent />
-    <ReactAsyncSelect />
+    // <LoginPage />
+    <SignUpForm />
   )
 }
 
