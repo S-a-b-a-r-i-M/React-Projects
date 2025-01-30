@@ -7,7 +7,7 @@ import { Label } from "../ui/label";
 
 const SignUpForm = () => {
   return (
-    <div className="w-full max-w-md p-">
+    <div className="w-full max-w-md">
       <Card>
         <CardHeader>
           <CardTitle className="text-2xl font-bold">Sign Up</CardTitle>

@@ -1,10 +1,10 @@
 import { DateTimeMoment } from "./components/DateTimeMoment"
-import FormDataWithFile from "./components/FormDataWithFile"
 
 function App() {
   DateTimeMoment()
   return (
-      <FormDataWithFile />
+    <h1 className="text-blue-400">Sabari</h1>
+      // <LoginPage />
       
   )
 }
