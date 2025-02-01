@@ -53,7 +53,7 @@ export function SelectComponent({ keyName, options, value, onChange: onSelect, t
       </SelectTrigger>
       <SelectContent>
         {options?.map(({ label, value: val }) => (
-            <SelectItem key={label} value={val}>{label}</SelectItem>
+          <SelectItem key={label} value={val}>{label}</SelectItem>
         ))}
       </SelectContent>
     </Select>
@@ -74,12 +74,12 @@ SelectComponent.propTypes = {
 }
 
 
-function ProfileEditorField({  }) {
+function ProfileEditorField({ }) {
 
-  const id="name"
+  const id = "name"
   const labelName = "Name"
   const value = undefined
-  const placeholder="Enter your name"
+  const placeholder = "Enter your name"
   const type = "text"
   const onChange = () => {
     console.log("onChange")
@@ -113,42 +113,42 @@ function ProfileEditorField({  }) {
   }
 
   const genderOptions = [
-    {label:"Male", value:"male"},
-    {label:"Female", value:"female"},
-    {label:"Other", value:"other"},
+    { label: "Male", value: "male" },
+    { label: "Female", value: "female" },
+    { label: "Other", value: "other" },
   ]
 
   const monthOptions = [
-    {label:"January", value:"january"},
-    {label:"February", value:"february"},
-    {label:"March", value:"march"},
-    {label:"April", value:"april"},
-    {label:"May", value:"may"},
-    {label:"June", value:"june"},
-    {label:"July", value:"july"},
-    {label:"August", value:"august"},
-    {label:"September", value:"september"},
-    {label:"October", value:"october"},
-    {label:"November", value:"november"},
-    {label:"December", value:"december"},
+    { label: "January", value: "january" },
+    { label: "February", value: "february" },
+    { label: "March", value: "march" },
+    { label: "April", value: "april" },
+    { label: "May", value: "may" },
+    { label: "June", value: "june" },
+    { label: "July", value: "july" },
+    { label: "August", value: "august" },
+    { label: "September", value: "september" },
+    { label: "October", value: "october" },
+    { label: "November", value: "november" },
+    { label: "December", value: "december" },
   ]
 
   const dateOptions = []
-  for(let i=1; i<=31; i++)
-    dateOptions.push({label:i, value:i})
+  for (let i = 1; i <= 31; i++)
+    dateOptions.push({ label: i, value: i })
 
   const yearOptions = []
   const currentYear = new Date().getFullYear()
-  for(let i=currentYear-100; i<=currentYear; i++)
-    yearOptions.push({label:i, value:i})
+  for (let i = currentYear - 100; i <= currentYear; i++)
+    yearOptions.push({ label: i, value: i })
 
   return (
     <>
       <div className="w-full flex items-start px-4">
-         {/* Label */}
+        {/* Label */}
         <Label htmlFor={id} className="w-1/4 text-lg">{labelName}</Label>
 
-         {/* Content */}
+        {/* Content */}
         <div className='w-2/4 text-lg'>
           {isEdit ? (
             // based on the type i have to render different types
@@ -229,8 +229,8 @@ function ProfileEditorField({  }) {
         {/* Edit */}
         {!isEdit && (
           <div className="w-1/4 text-end">
-            <Button 
-              className="text-lg pt-0" 
+            <Button
+              className="text-lg pt-0"
               variant="icon"
               onClick={() => setIsEdit(!isEdit)}
             >
@@ -240,7 +240,7 @@ function ProfileEditorField({  }) {
           </div>
         )}
       </div>
-      <hr className='w-full my-2'/>
+      <hr className='w-full my-2' />
     </>
   )
 }
