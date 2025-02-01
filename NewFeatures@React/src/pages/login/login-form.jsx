@@ -1,12 +1,13 @@
 import { useForm } from "react-hook-form"
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../../components/ui/form";
-import { Input } from "../../components/ui/input";
+import { Form } from "../../components/ui/form";
 import { Button } from "../../components/ui/button";
-import { Checkbox } from "../../components/ui/checkbox";
 import propTypes from "prop-types";
 import { Sparkles } from "lucide-react";
+import PasswordFormField from "./component/password-form-field";
+import InputFormField from "./component/input-form-field";
+import { AUTH_PAGES } from "./constant";
 
 // Define the form validation schema
 const formSchema = z.object({
@@ -30,9 +31,9 @@ export default function LogInForm({ setCurrentPage }) {
   };
 
   return (
-      <div className="w-full max-w-md space-y-4">
+      <div className="w-full max-w-md lg:max-w-lg space-y-4">
         {/* Header Content */}
-        <div className="flex flex-col items-start text-xl lg:text-2xl font-medium">
+        <div className="flex flex-col items-start text-2xl lg:text-3xl font-medium">
           <p className="flex items-center gap-1">
             Welcome Back
             <Sparkles className="w-6 h-6 inline text-primary text-violet-700 fill-violet-400" />
@@ -44,58 +45,30 @@ export default function LogInForm({ setCurrentPage }) {
         <div className="w-full px-1">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <FormField
+              <InputFormField
                 control={form.control}
-                name="email"
-                render={({ field, fieldState: { error } }) => (
-                  <FormItem>
-                    <FormLabel className="flex flex-start">
-                      Email<span className={`${error ? 'text-red-600' : 'text-violet-600'}`}>*</span>
-                    </FormLabel>
-                    <FormControl>
-                      <Input 
-                        {...field}
-                        className=""
-                        placeholder="mail@domain.com"
-                      />
-                    </FormControl>
-                    <FormMessage className="text-[12px] my-0"/>
-                  </FormItem>
-                )}
+                uniqueName={"email"}
+                labelName={"Email"}
+                placeholder={"mail@domain.com"}
+                inputType="email"
               />
-              <FormField
+              <PasswordFormField
                 control={form.control}
-                name="password"
-                render={({ field, fieldState: { error }}) => (
-                  <FormItem>
-                    <FormLabel className="flex flex-start">
-                      Password<span className={`${error ? 'blink text-red-600' : 'text-violet-600'}`}>*</span>
-                    </FormLabel>
-                    <FormControl>
-                      <Input 
-                        {...field}
-                        className=""
-                        placeholder="Min.8 characters" 
-                      />
-                    </FormControl>
-                    <FormMessage className="text-[12px] my-0"/>
-                  </FormItem>
-                )} 
+                uniqueName={"password"}
+                labelName={"Password"}
+                placeholder={"Min.8 characters"}
               />
               <div className="flex justify-between">
-                <div className="flex items-center space-x-2">
-                  <Checkbox id="remember-me" className="data-[state=checked]:bg-violet-400" />
-                  <label
-                    htmlFor="remember-me"
-                    className="text-sm font-medium"
-                  >
-                    Remember me
-                  </label>
-                </div>
-                <a href="#" className="text-sm text-violet-600">Forgot Password?</a>
+                <a 
+                  href="#" 
+                  className="text-sm lg:text-[16px] text-violet-600"
+                  onClick={() => setCurrentPage(AUTH_PAGES.forgetPassword)}
+                >
+                  Forgot Password?
+                </a>
               </div>
               {/* Sign Up Button */}
-              <Button className="w-full bg-violet-700 hover:bg-violet-600 text-white">
+              <Button className="w-full text-lg bg-violet-700 hover:bg-violet-600 text-white">
                 Login
               </Button>
             </form>
@@ -103,11 +76,11 @@ export default function LogInForm({ setCurrentPage }) {
         </div>
         
         {/* Sign Up Link */}
-        <p className="flex justify-start text-sm text-gray-500 mt-4">
+        <p className="flex justify-start text-sm lg:text-[16px] text-gray-500 mt-4">
           Not registered yet?{' '}
           <span 
             className="text-violet-600 hover:text-indigo-500 hover:cursor-pointer px-1"
-            onClick={() => setCurrentPage("signup")}
+            onClick={() => setCurrentPage(AUTH_PAGES.signup)}
           >
             Create account
           </span>
