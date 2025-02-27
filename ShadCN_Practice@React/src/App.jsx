@@ -1,11 +1,11 @@
-import AssigneeCard from "./custom-components/AssigeeCard"
+import InfiniteScrollableDropDown from "./components/dropdowns/infinite-scroll-dropdown"
 
 
 function App() {
 
   return (
     <div className="flex justify-center items-center m-20">
-      <AssigneeCard />
+      <InfiniteScrollableDropDown />
     </div>
   )
 }
