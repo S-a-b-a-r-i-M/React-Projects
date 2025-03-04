@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select"
-import { fetchFruites } from "@/services/api/dummy"
+import { fetchFruites } from "@/services/api/mock.api"
 import { Button } from "../ui/button"
 
 
@@ -29,7 +29,6 @@ function InfiniteScrollableDropDown() {
     setIsLoading(true)
     try{
       const newItems = await fetchFruites(pageIndex * ITEMS_PER_PAGE, ITEMS_PER_PAGE)
-      console.log("offset", pageIndex, "newItems", newItems.length)
       // If we received fewer items than requested, we've *reached the end*
       if (newItems.length < ITEMS_PER_PAGE) setHashMore(false)
 
